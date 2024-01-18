@@ -1,0 +1,283 @@
+/* variables */
+
+:root {
+  --color-primary: #666666;
+  --color-secondary: #ed3833;
+  --color-gray-200: #cccccc;
+  --color-gray-100: #e3e3e3;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-green: #018e01;
+  --color-red: #fb1c1c;
+  --font-weight-bold: 600;
+}
+
+h2 {
+  color: var(--color-primary);
+  font-weight: var(--font-weight-bold);
+}
+
+body,
+a {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: var(--color-primary);
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+header {
+  border-bottom: 1px solid #000000;
+  height: 48px;
+  position: fixed;
+  top: 0;
+  background: var(--color-white);
+  width: 100%;
+  z-index: 1;
+}
+
+main {
+  position: relative;
+  top: 80px;
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.header-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.logo {
+  height: 100%;
+}
+
+nav {
+  display: flex;
+  gap: 32px;
+}
+
+nav > a {
+  text-decoration: none;
+  font-weight: var(--font-weight-bold);
+}
+
+nav > a.selected {
+  color: var(--color-secondary);
+}
+
+.table-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.title-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.add-button {
+  color: var(--color-white);
+  background-color: var(--color-secondary);
+  padding: 16px;
+  font-size: 20px;
+  font-weight: var(--font-weight-bold);
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+tr {
+  position: relative;
+}
+
+th {
+  font-weight: var(--font-weight-bold);
+}
+
+th,
+td {
+  padding: 8px;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+table,
+th,
+td {
+  border: 1px solid var(--color-gray-100);
+}
+
+.no-data-message {
+  width: 100%;
+  text-align: center;
+  padding: 16px;
+}
+
+.multi-users,
+.tags {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.multi-users > .count,
+.tags > .count {
+  font-size: 9px;
+  background-color: var(--color-gray-100);
+  border-radius: 50%;
+  padding: 4px;
+}
+
+.tag {
+  font-size: 10px;
+  background-color: var(--color-gray-100);
+  padding: 2px 4px;
+  border-radius: 3px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.tag::after {
+  content: "•";
+}
+
+.action-button {
+  color: var(--color-primary);
+}
+
+form.form-edit-task {
+  background: var(--color-white);
+  z-index: 1;
+  position: absolute;
+  top: 32;
+  right: 40;
+  display: flex;
+  align-items: center;
+  padding: 0 2px 2px 2px;
+}
+
+form.form-edit-task > input {
+  height: 20px;
+  outline: none;
+  border: 1px solid var(--color-gray-200);
+  border-radius: 2px;
+}
+
+form.form-edit-task > button {
+  color: var(--color-white);
+  background-color: var(--color-secondary);
+  font-size: 12px;
+  height: 24px;
+  border-radius: 2px;
+}
+
+form.form-edit-task > button::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  margin-left: -10px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent var(--color-secondary) transparent;
+}
+
+form.form-edit-task > button[disabled] {
+  cursor: not-allowed;
+}
+
+.backdrop {
+  background-color: var(--color-primary);
+  opacity: 0.6;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  position: fixed;
+}
+
+.drawer {
+  height: calc(100vh - 72px);
+  width: 400px;
+  background-color: var(--color-white);
+  position: fixed;
+  top: 48px;
+  right: 0;
+  z-index: 1;
+  padding: 8px 32px 16px;
+  display: flex;
+  overflow: scroll;
+}
+
+.drawer > .drawer-content {
+  width: 360px;
+  margin-bottom: 32px;
+}
+
+.drawer > .close {
+  font-size: 32px;
+  position: fixed;
+  right: 16;
+  top: 64;
+  color: var(--color-primary);
+}
+
+form.form-add-task {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.fields {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+form.form-add-task label {
+  font-size: 12px;
+}
+
+form.form-add-task input,
+form.form-add-task textarea {
+  padding: 8px;
+  border: 1px solid var(--color-gray-200);
+  border-radius: 4px;
+  color: var(--color-primary);
+  outline: none;
+}
+
+form.form-add-task button {
+  align-self: flex-end;
+  background: var(--color-secondary);
+  padding: 16px 32px;
+  border-radius: 4px;
+  color: var(--color-white);
+  margin-bottom: 24px;
+}
+
+form.form-add-task > .message-error {
+  color: var(--color-red);
+}
+
+form.form-add-task > .message-success {
+  color: var(--color-green);
+}
